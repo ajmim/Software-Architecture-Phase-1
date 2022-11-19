@@ -1,6 +1,6 @@
 package ch.unil.soar.coursewebsite.beans;
 
-import ch.unil.soar.coursewebsite.Database;
+import ch.unil.soar.coursewebsite.Database.Database;
 import ch.unil.soar.coursewebsite.exceptions.AlreadyExistsException;
 import ch.unil.soar.coursewebsite.exceptions.DoesNotExistException;
 import ch.unil.soar.coursewebsite.exceptions.InsufficientBalanceException;
@@ -106,7 +106,7 @@ public class UserBean implements Serializable {
         return false;
     }    
 
-    protected static boolean usernameStudentExists() throws DoesNotExistException {
+    protected boolean usernameStudentExists() throws DoesNotExistException {
         for (Student student : Database.getInstance().getStudents()) {
             if (student.getUsername().equals(username)) {
                 return true;
@@ -114,7 +114,7 @@ public class UserBean implements Serializable {
         }
         return false;
     }
-    protected static boolean usernameTeacherExists() throws DoesNotExistException {
+    protected boolean usernameTeacherExists() throws DoesNotExistException {
         for (Teacher teacher : Database.getInstance().getTeachers()) {
             if (teacher.getUsername().equals(username)) {
                 return true;

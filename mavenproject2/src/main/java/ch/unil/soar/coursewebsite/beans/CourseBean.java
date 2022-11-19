@@ -1,6 +1,6 @@
 package ch.unil.soar.coursewebsite.beans;
 
-import ch.unil.soar.coursewebsite.Database;
+import ch.unil.soar.coursewebsite.Database.Database;
 import ch.unil.soar.coursewebsite.exceptions.DoesNotExistException;
 import ch.unil.soar.coursewebsite.models.Course;
 

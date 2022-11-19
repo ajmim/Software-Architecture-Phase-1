@@ -1,6 +1,6 @@
 package ch.unil.soar.coursewebsite.tests;
 
-import ch.unil.soar.coursewebsite.Database;
+import ch.unil.soar.coursewebsite.Database.Database;
 import ch.unil.soar.coursewebsite.controllers.CourseController;
 import ch.unil.soar.coursewebsite.controllers.LoginController;
 import ch.unil.soar.coursewebsite.exceptions.DoesNotExistException;

@@ -1,19 +1,15 @@
-package ch.unil.soar.coursewebsite;
+package ch.unil.soar.coursewebsite.Database;
 
 import ch.unil.soar.coursewebsite.models.*;
 
 import java.util.ArrayList;
 
 public class Database {
-    /*private static Database instance = null ;
-    private ArrayList<Course> courses = new CourseList<> ();
-    private ArrayList<Student> students new StudentList <> ();
-    private ArrayList<Teacher> teachers = new Teacher <> ();*/
-
+    
     private static Database instance = null ;
-    private ArrayList<Course> courses = new ArrayList<>();
-    private ArrayList<Student> students = new ArrayList<>();
-    private ArrayList<Teacher> teachers = new ArrayList<>();
+    private static ArrayList<Course> courses = new ArrayList<>();
+    private static ArrayList<Student> students = new ArrayList<>();
+    private static ArrayList<Teacher> teachers = new ArrayList<>();
     
     private Database(){
         //students = new ArrayList<Student>();

@@ -1,5 +1,6 @@
 package ch.unil.soar.coursewebsite.beans;
 
+import static ch.unil.soar.coursewebsite.beans.UserBean.findTeacherByUsername;
 import ch.unil.soar.coursewebsite.exceptions.DoesNotExistException;
 import ch.unil.soar.coursewebsite.models.Student;
 import ch.unil.soar.coursewebsite.models.Teacher;
@@ -17,20 +18,22 @@ public class LoginBean implements Serializable {
 
     private String username = "";
     private String password = "";
-    private Student currentStudent;
-    private Teacher currentTeacher;
+    private static Student currentStudent;
+    private static Teacher currentTeacher;
 
     public void studentLogsIn() {
         try {
             Student student = UserBean.findStudentByUsername(username);
             if (student != null && student.isPasswordCorrect(password)) {
                 currentStudent = student;
-                return "/UserPage/UserMainPage.xhtml?faces-redirect=true";
+                //ADD RIGHT LINK
+                //return "/UserPage/UserMainPage.xhtml?faces-redirect=true"; 
             }
         } catch (DoesNotExistException ex) {
             System.out.println(ex.getMessage());
         }
-        return "/MainPage/LoginPage.xhtml?faces-redirect=true";
+        //ADD RIGHT LINK
+        //return "/MainPage/LoginPage.xhtml?faces-redirect=true";
     }
     public void teacherLogsIn() {
         try {
@@ -45,15 +48,16 @@ public class LoginBean implements Serializable {
         return "/MainPage/LoginPage.xhtml?faces-redirect=true";
     }
 
+  
     public String userLogsout() {
         currentStudent = null;
         currentTeacher = null;
         return "/MainPage/MainPage.xhtml?faces-redirect=true";
     }
 
-    public Student getStudentLoggedIn(){return currentStudent;}
+    public static Student getStudentLoggedIn(){return currentStudent;}
 
-    public Teacher getTeacherLoggedIn() {return currentTeacher;}
+    public static Teacher getTeacherLoggedIn() {return currentTeacher;}
 
     
     public String getPassword() {
