@@ -17,69 +17,57 @@ import javax.inject.Named;
 @SessionScoped
 public class CourseBean implements Serializable {
 
-    private String foodName = "";
+    private String courseTitle = "";
+    private double price = 0.0;
 
-    public void addFoodToShoppingCart() {
-        User user = LoginBean.getUserLoggedIn();
-        try {
-            Food f = findFoodByNameInTheStore(foodName);
-            user.getShoppingCart().addFood(f);
-        } catch (DoesNotExistException ex) {
-            System.out.println(ex.getMessage());
-        }
-        // empty values
-        this.foodName = "";
-    }
-
-    public void removeFoodFromShoppingCart() {
-        User user = LoginBean.getUserLoggedIn();
-        try {
-            if (doesFoodExistInShoppingCart(user, foodName)) {
-                user.getShoppingCart().removeFood(findFoodByNameInShoppingCart(user, foodName));
-            }
-        } catch (DoesNotExistException ex) {
-            System.out.println(ex.getMessage());
-        }
-        // empty values
-        this.foodName = "";
-    }
-
-    private boolean doesFoodExistInShoppingCart(User user, String foodName) {
-        for (Food f : user.getShoppingCart().getFoods()) {
-            if (f.getName().equals(foodName)) {
+ protected boolean doesCourseExistInStudentCourses() {
+        for (Course c : LoginBean.getStudentLoggedIn().getUserCourses()) {
+            if (c.getTitle().equals(courseTitle)) {
                 return true;
             }
         }
         return false;
     }
-
-    private Food findFoodByNameInTheStore(String foodName) throws DoesNotExistException {
-        for (Food f : MockDatabase.getInstance().getFoods()) {
-            if (f.getName().equals(foodName)) {
-                return f;
+    public boolean doesCourseExistInApp() {
+        for (Course f : Database.getInstance().getCourses()) {
+            if (f.getTitle().equals(courseTitle)) {
+                return true;
             }
         }
-        throw new DoesNotExistException("Food " + foodName + " does not exist.");
+        return false;
     }
-
-    private Food findFoodByNameInShoppingCart(User user, String foodName) throws DoesNotExistException {
-        for (Food f : user.getShoppingCart().getFoods()) {
-            if (f.getName().equals(foodName)) {
-                return f;
+    public static void deleteACourse(Course c){
+        if(c.getTeacher().equals(LoginBean.getTeacherLoggedIn())){
+            Database.getInstance().deleteCourse(c);
+            System.out.println("Deleted successfully.");
+        }else{
+            System.out.println("You are not the owner of this course, you can't delete it.");
+        }
+    }
+    public static Course findCourseByTitle(String course) throws DoesNotExistException{
+        for (Course c : Database.getInstance().getCourses()) {
+            if (c.getTitle().equals(course)) {
+                return c;
             }
         }
-        throw new DoesNotExistException("Food " + foodName + " does not exist.");
+        throw new DoesNotExistException("Course " + course + " does not exist.");
     }
 
-    public ArrayList<Food> getFoods() {
-        return MockDatabase.getInstance().getFoods();
+    public void createACourse(){
+        if (!doesCourseExistInApp()){
+            Database.getInstance().addCourseInApp(new Course(courseTitle, LoginBean.getTeacherLoggedIn(), price));
+        }
     }
 
-    public String getFoodName() {
-        return foodName;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
-    public void setFoodName(String foodName) {
-        this.foodName = foodName;
+    public void setCourseTitle(String courseTitle) {
+        this.courseTitle = courseTitle;
+    }
+
+    public String getCourseTitle() {
+        return courseTitle;
     }
 }
