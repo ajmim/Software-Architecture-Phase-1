@@ -1,4 +1,4 @@
-package ch.unil.doplab.grocerystorewebsite.beans;
+package ch.unil.soar.coursewebsite.beans;
 
 import ch.unil.soar.coursewebsite.exceptions.DoesNotExistException;
 import ch.unil.soar.coursewebsite.models.Student;

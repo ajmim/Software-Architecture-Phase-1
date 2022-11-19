@@ -1,4 +1,4 @@
-package ch.unil.doplab.grocerystorewebsite.beans;
+package ch.unil.soar.coursewebsite.beans;
 
 import ch.unil.soar.coursewebsite.Database;
 import ch.unil.soar.coursewebsite.exceptions.AlreadyExistsException;
@@ -10,6 +10,7 @@ import ch.unil.soar.coursewebsite.models.Teacher;
 import java.io.Serializable;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
+import ch.unil.soar.coursewebsite.beans.LoginBean;
 
 /**
  *
@@ -27,21 +28,21 @@ public class UserBean implements Serializable {
     private double amount = 0.0;
 
     public void createAStudent() throws AlreadyExistsException, DoesNotExistException {
-            if (!emailStudentExists() && !usernameStudentExists()) {
-
-                Database.getInstance().addAStudent(new Student(username, firstName, lastName, email, password));
-
-        } else throw new AlreadyExistsException("This username already exist");
+        if (!emailStudentExists() && !usernameStudentExists()) {
+            Database.getInstance().addAStudent(new Student(username, firstName, lastName, email, password));
+        } else {throw new AlreadyExistsException("This username already exist");}
+        // empty values
+        this.email = "";
+        this.username = "";
+        this.firstName = "";
+        this.lastName = "";
+        this.password = "";
         }
     
     public void createATeacher() throws AlreadyExistsException, DoesNotExistException{
-            if (!emailTeacherExists() && !usernameTeacherExists()) {
-
-                Database.getInstance().addATeacher(new Teacher(username, firstName, lastName, email, password));
-
-        } else throw new AlreadyExistsException("This username already exist");
-        }
-    
+        if (!emailTeacherExists() && !usernameTeacherExists()) {
+            Database.getInstance().addATeacher(new Teacher(username, firstName, lastName, email, password));
+        } else {throw new AlreadyExistsException("This username already exist");}
         // empty values
         this.email = "";
         this.username = "";
@@ -51,14 +52,13 @@ public class UserBean implements Serializable {
     }
 
     public void increaseBalance() {
-        LoginBean.getUserLoggedIn().increaseBalance(amount);
-        // empty value
+        LoginBean.getStudentLoggedIn().increaseBalance(amount);
         this.amount = 0.0;
     }
 
     public void completeEnroll(Course course) throws InsufficientBalanceException, AlreadyExistsException {
         try {
-            for(Course c : LoginController.getStudentLoggedIn().getUserCourses()){
+            for(Course c : LoginBean.getStudentLoggedIn().getUserCourses()){
                 if(course.equals(c)){throw new AlreadyExistsException("This course is already in your list of courses.");}
             }
             LoginBean.getStudentLoggedIn().enroll(course);
@@ -123,27 +123,27 @@ public class UserBean implements Serializable {
         return false;
     }
 
-    public static double getBalance() {
+    public double getBalance() {
         return amount;
     }
 
-    public static String getEmail() {
+    public String getEmail() {
         return email;
     }
 
-    public static String getFirstName() {
+    public String getFirstName() {
         return firstName;
     }
 
-    public static String getLastName() {
+    public String getLastName() {
         return lastName;
     }
 
-    public static String getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public static String getUsername() {
+    public String getUsername() {
         return username;
     }
         
