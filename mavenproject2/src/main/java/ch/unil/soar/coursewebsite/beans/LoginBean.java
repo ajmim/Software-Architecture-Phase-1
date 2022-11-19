@@ -21,7 +21,7 @@ public class LoginBean implements Serializable {
     private static Student currentStudent;
     private static Teacher currentTeacher;
 
-    public void studentLogsIn() {
+    public String studentLogsIn() {
         try {
             Student student = UserBean.findStudentByUsername(username);
             if (student != null && student.isPasswordCorrect(password)) {
@@ -34,18 +34,24 @@ public class LoginBean implements Serializable {
         }
         //ADD RIGHT LINK
         //return "/MainPage/LoginPage.xhtml?faces-redirect=true";
+        return "/MainPage.xhtml?faces-redirect=true";
     }
-    public void teacherLogsIn() {
+    
+    public String teacherLogsIn() {
         try {
             Teacher teacher = findTeacherByUsername(username);
             if (teacher != null && teacher.isPasswordCorrect(password)) {
                 currentTeacher = teacher;
-                return "/UserPage/UserMainPage.xhtml?faces-redirect=true";
+                // CORRECT URL
+                // return "/UserPage/UserMainPage.xhtml?faces-redirect=true";
+                return "/MainPage.xhtml?faces-redirect=true";
             }
         } catch (DoesNotExistException ex) {
             System.out.println(ex.getMessage());
         }
-        return "/MainPage/LoginPage.xhtml?faces-redirect=true";
+        // CORRECT URL
+        // return "/MainPage/LoginPage.xhtml?faces-redirect=true";
+        return "/MainPage.xhtml?faces-redirect=true";
     }
 
   
