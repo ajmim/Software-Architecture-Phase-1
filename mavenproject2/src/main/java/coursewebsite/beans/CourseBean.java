@@ -1,11 +1,10 @@
-package ch.unil.soar.coursewebsite.beans;
+package coursewebsite.beans;
 
-import ch.unil.soar.coursewebsite.Database.Database;
-import ch.unil.soar.coursewebsite.exceptions.DoesNotExistException;
-import ch.unil.soar.coursewebsite.models.Course;
+import coursewebsite.Database.Database;
+import coursewebsite.exceptions.DoesNotExistException;
+import coursewebsite.models.Course;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 

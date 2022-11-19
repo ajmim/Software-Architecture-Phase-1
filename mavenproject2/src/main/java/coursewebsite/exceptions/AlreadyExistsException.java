@@ -1,4 +1,4 @@
-package ch.unil.soar.coursewebsite.exceptions;
+package coursewebsite.exceptions;
 
 public class AlreadyExistsException extends Exception {
     private String message;

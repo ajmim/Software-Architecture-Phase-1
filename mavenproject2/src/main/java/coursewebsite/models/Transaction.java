@@ -1,9 +1,9 @@
-package ch.unil.soar.coursewebsite.models;
+package coursewebsite.models;
 
-import ch.unil.soar.coursewebsite.exceptions.InsufficientBalanceException;
-import ch.unil.soar.coursewebsite.models.Course;
-import ch.unil.soar.coursewebsite.models.Student;
-import ch.unil.soar.coursewebsite.models.Teacher;
+import coursewebsite.exceptions.InsufficientBalanceException;
+import coursewebsite.models.Course;
+import coursewebsite.models.Student;
+import coursewebsite.models.Teacher;
 
 public class Transaction {
     private final Student student;

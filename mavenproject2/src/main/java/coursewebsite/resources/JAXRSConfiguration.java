@@ -1,4 +1,4 @@
-package com.mycompany.mavenproject2;
+package coursewebsite.resources;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;

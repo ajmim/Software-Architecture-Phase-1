@@ -1,9 +1,9 @@
-package ch.unil.soar.coursewebsite.beans;
+package coursewebsite.beans;
 
-import static ch.unil.soar.coursewebsite.beans.UserBean.findTeacherByUsername;
-import ch.unil.soar.coursewebsite.exceptions.DoesNotExistException;
-import ch.unil.soar.coursewebsite.models.Student;
-import ch.unil.soar.coursewebsite.models.Teacher;
+import static coursewebsite.beans.UserBean.findTeacherByUsername;
+import coursewebsite.exceptions.DoesNotExistException;
+import coursewebsite.models.Student;
+import coursewebsite.models.Teacher;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;

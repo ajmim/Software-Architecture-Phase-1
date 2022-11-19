@@ -1,6 +1,6 @@
-package ch.unil.soar.coursewebsite.models;
+package coursewebsite.models;
 
-import ch.unil.soar.coursewebsite.Database.Database;
+import coursewebsite.Database.Database;
 
 public class Teacher extends User {
     public Teacher (String username, String firstName, String lastName, 

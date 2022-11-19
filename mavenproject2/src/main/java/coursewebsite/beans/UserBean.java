@@ -1,16 +1,16 @@
-package ch.unil.soar.coursewebsite.beans;
+package coursewebsite.beans;
 
-import ch.unil.soar.coursewebsite.Database.Database;
-import ch.unil.soar.coursewebsite.exceptions.AlreadyExistsException;
-import ch.unil.soar.coursewebsite.exceptions.DoesNotExistException;
-import ch.unil.soar.coursewebsite.exceptions.InsufficientBalanceException;
-import ch.unil.soar.coursewebsite.models.Course;
-import ch.unil.soar.coursewebsite.models.Student;
-import ch.unil.soar.coursewebsite.models.Teacher;
+import coursewebsite.Database.Database;
+import coursewebsite.exceptions.AlreadyExistsException;
+import coursewebsite.exceptions.DoesNotExistException;
+import coursewebsite.exceptions.InsufficientBalanceException;
+import coursewebsite.models.Course;
+import coursewebsite.models.Student;
+import coursewebsite.models.Teacher;
 import java.io.Serializable;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
-import ch.unil.soar.coursewebsite.beans.LoginBean;
+import coursewebsite.beans.LoginBean;
 
 /**
  *

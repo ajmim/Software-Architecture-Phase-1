@@ -1,6 +1,6 @@
-package ch.unil.soar.coursewebsite.models;
+package coursewebsite.models;
 
-import ch.unil.soar.coursewebsite.Database.Database;
+import coursewebsite.Database.Database;
 
 import java.util.ArrayList;
 import java.util.Objects;

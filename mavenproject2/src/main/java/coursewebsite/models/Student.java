@@ -1,7 +1,7 @@
-package ch.unil.soar.coursewebsite.models;
+package coursewebsite.models;
 
-import ch.unil.soar.coursewebsite.Database.Database;
-import ch.unil.soar.coursewebsite.exceptions.InsufficientBalanceException;
+import coursewebsite.Database.Database;
+import coursewebsite.exceptions.InsufficientBalanceException;
 
 import javax.xml.crypto.Data;
 

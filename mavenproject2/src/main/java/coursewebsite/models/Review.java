@@ -1,4 +1,4 @@
-package ch.unil.soar.coursewebsite.models;
+package coursewebsite.models;
 
 public class Review {
     private final int rating;
