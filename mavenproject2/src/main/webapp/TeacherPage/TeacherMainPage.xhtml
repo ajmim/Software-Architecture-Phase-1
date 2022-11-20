@@ -7,10 +7,51 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>TODO supply a title</title>
+<style>
+.button {
+  border: none;
+  color: white;
+  padding: 12px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 2px 2px;
+  cursor: pointer;
+}
+
+.button1 {background-color: #cb4335;} /* Red */
+</style>
+        <title>Teacher Portal</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
-        <div>TODO write content</div>
+        <h1> Welcome to teacher portal </h1>
+        
+        <p>Vous trouverez ici les informations nécessaires à vos cours :</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Course Name</th>
+                    <th>Price</th>
+                    <th>Enrolled Student</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <th>JAVA</th>
+                  <th>32 CHF</th>
+                  <th>28</th>
+                  <th> <button class="button button1">Delete this course</button> </th>       
+                </tr>
+                <tr>
+                  <th>Python</th>
+                  <th>37 CHF</th>
+                  <th>27</th>
+                  <th> <button class="button button1">Delete this course</button> </th>       
+                </tr>
+            </tbody>
+      </table>
     </body>
 </html>
