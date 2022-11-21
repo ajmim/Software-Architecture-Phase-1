@@ -4,6 +4,72 @@
 - un bouton "add course"
 - en dessous, la list de ses cours.
 -->
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      
+    <head>
+        <title>TeacherMainPage</title>
+    </head>
+    <body>
+        <h:form>
+            <h:panelGrid columns="2" style="font-size: 30px">
+                <h:outputText value="Liste de vos cours">
+                <br/>
+                <ui:repeat value="#{courseBean.courses}" var="item">
+                    <h:outputText value="-----" />
+                    <h:panelGrid columns="2">
+                        <h:outputText value="Title:" />
+                        <h:outputText value="#{item.title}" />
+                        <h:outputText value="Price:" />
+                        <h:outputText value="#{item.price}" />                       
+                    </h:panelGrid>
+                </ui:repeat>
+                    
+                </h:outputText>  
+            </h:panelGrid>
+        </h:form>
+    </body>
+
+
+
+
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -21,37 +87,61 @@
 }
 
 .button1 {background-color: #cb4335;} /* Red */
+.button2 {background-color: #2ecc71;} /* Green */
+
 </style>
-        <title>Teacher Portal</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <body>
-        <h1> Welcome to teacher portal </h1>
         
-        <p>Vous trouverez ici les informations nécessaires à vos cours :</p>
+<title>
+    Teacher Portal
+</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        </head>
+            <body>               
+                <h1> 
+                    Welcome to teacher portal 
+                </h1>       
+                <p>
+                    Vous trouverez ici les informations nécessaires à vos cours :
+                </p>       
+                <a href ="CreateCoursePage.xhtml">
+                    <button class="button button2">
+                        Create New Course
+                    </button>
+                </a>
         
-        <table>
-            <thead>
-                <tr>
-                    <th>Course Name</th>
-                    <th>Price</th>
-                    <th>Enrolled Student</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                  <th>JAVA</th>
-                  <th>32 CHF</th>
-                  <th>28</th>
-                  <th> <button class="button button1">Delete this course</button> </th>       
-                </tr>
+                
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Course Name</th>
+                            <th>Price</th>
+                            <th>Enrolled Student</th>
+                        </tr>
+                    </thead>           
+                <tbody>
+                    <tr>
+                        <th>JAVA</th>
+                        <th>32 CHF</th>
+                        <th>28</th>
+                        <th> 
+                        <a href="DeleteCoursePage.xhtml">
+                        <button class="button button1">Delete this course</button> 
+                        </a>
+                        </th>       
+                    </tr>
                 <tr>
                   <th>Python</th>
                   <th>37 CHF</th>
                   <th>27</th>
-                  <th> <button class="button button1">Delete this course</button> </th>       
+                  <th> 
+                      <a href="DeleteCoursePage.xhtml">
+                      <button class="button button1">Delete this course</button> 
+                      </a>
+                  </th>       
                 </tr>
-            </tbody>
-      </table>
-    </body>
+                </tbody>
+                </table>
+            </body>
 </html>
+-->
