@@ -15,21 +15,20 @@
     </head>
     <body>
         <h:form>
-            <h:panelGrid columns="2" style="font-size: 30px">
-                <h:outputText value="Liste de vos cours">
-                <br/>
-                <ui:repeat value="#{courseBean.courses}" var="item">
-                    <h:outputText value="-----" />
-                    <h:panelGrid columns="2">
-                        <h:outputText value="Title:" />
-                        <h:outputText value="#{item.title}" />
-                        <h:outputText value="Price:" />
-                        <h:outputText value="#{item.price}" />                       
-                    </h:panelGrid>
-                </ui:repeat>
-                    
-                </h:outputText>  
-            </h:panelGrid>
+            <h:outputText value="Courses in school" style="font-size: 30px"/>
+            <br/>
+            <ui:repeat value="#{courseBean.getAllCourses()}" var="item">
+                <h:outputText value="-----" />
+                <h:panelGrid columns="2">
+                    <h:outputText value="Name:" />
+                    <h:outputText value="#{item.title}" />
+                    <h:outputText value="Price:" />
+                    <h:outputText value="#{item.price}" />
+                </h:panelGrid>
+                <h:outputText value="-----" />
+            </ui:repeat>
+            <br/>
+            <h:commandButton value="Go Back to Main Menu" action="/MainPage/MainPage.xhtml?faces-redirect=true"/>
         </h:form>
     </body>
 

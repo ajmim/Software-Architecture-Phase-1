@@ -1,12 +1,15 @@
 package coursewebsite.beans;
 
+import coursewebsite.Database.Database;
 import static coursewebsite.beans.UserBean.findTeacherByUsername;
 import coursewebsite.exceptions.DoesNotExistException;
+import coursewebsite.models.Course;
 import coursewebsite.models.Student;
 import coursewebsite.models.Teacher;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -86,4 +89,6 @@ public class LoginBean implements Serializable {
     public void setUsername(String username) {
         this.username = username;
     }
+    
+  
 }

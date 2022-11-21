@@ -5,6 +5,7 @@ import coursewebsite.exceptions.DoesNotExistException;
 import coursewebsite.models.Course;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
@@ -68,5 +69,8 @@ public class CourseBean implements Serializable {
 
     public String getCourseTitle() {
         return courseTitle;
+    }
+    public ArrayList<Course> getAllCourses(){ //TO DELETE
+        return Database.getInstance().getCourses();
     }
 }
