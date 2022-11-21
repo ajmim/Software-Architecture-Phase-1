@@ -26,8 +26,7 @@ public class LoginBean implements Serializable {
             Student student = UserBean.findStudentByUsername(username);
             if (student != null && student.isPasswordCorrect(password)) {
                 currentStudent = student;
-                //ADD RIGHT LINK
-                //return "/UserPage/UserMainPage.xhtml?faces-redirect=true"; 
+                return "/UserPage/UserMainPage.xhtml?faces-redirect=true"; 
             }
         } catch (DoesNotExistException ex) {
             System.out.println(ex.getMessage());
