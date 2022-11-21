@@ -26,7 +26,10 @@ and open the template in the editor....
  
     <h:body>
         <p:button outcome="LoginPage"  value="Navigate"/>    
-        
+         <h:panelGrid columns="1">
+         <h:link value="Login" outcome="LoginPage.xhtml?faces-redirect=true" />
+         <h:link value="Create User" outcome="CreateUserPage.xhtml?faces-redirect=true" />
+         </h:panelGrid>
     </h:body>
 </html>
 
