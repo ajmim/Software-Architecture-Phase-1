@@ -17,4 +17,4 @@ This is phase one of the project, focusing on implementing core features and vie
 - MVC architecture for the first time can be challenging due to the need to understand the separation of concerns and the data flow between the Model, View, and Controller.
 
 ## Achievement
-The code runs successfuly and we can continue working on [the second phase of the project] (https://github.com/ajmim/Software-Architecture-Phase-2).
+The code runs successfuly and we can continue working on [the second phase of the project](https://github.com/ajmim/Software-Architecture-Phase-2).
