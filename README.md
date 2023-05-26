@@ -9,7 +9,7 @@
 - Thomas Vidalenc
 
 ### Description of the project
-In the context of our Software Architecture course at the Information System Master at HEC Lausanne, we worked on a creating a web application using Java Framework (JavaServer Faces JSF).
+In the context of our Software Architecture course at the Information System Master at HEC Lausanne, we worked on a creating a web application for online course management (such as Udemy) using Java Framework (JavaServer Faces JSF).
 This is phase one of the project, focusing on implementing core features and views. We use the MVC model.
 
 ## Challenges
